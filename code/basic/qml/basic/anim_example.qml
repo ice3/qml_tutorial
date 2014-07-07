@@ -16,21 +16,9 @@ Rectangle {
     }
 
 
-    // we can even define functions
-    function useless(val){
-        if(val === 120){
-             console.log(val)
-        }
-    }
-
-
-    // slots are automagically created for all properties
-    // we can detect when they have changed
-    onAnimatedValueChanged: useless(animatedValue)
-
-
     Text {
+        id: text
         anchors.centerIn: parent
-        text: animatedValue
+        text: "<b>" + animatedValue.toString() + "</b>"
     }
 }
