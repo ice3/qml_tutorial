@@ -23,4 +23,5 @@ Rectangle {
         onExited: parent.color = colorBg
     }
 
+
 }
