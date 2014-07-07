@@ -31,5 +31,6 @@ Rectangle  {
         anchors.top: helloText.bottom
         anchors.horizontalCenter: page.horizontalCenter
         font.pointSize: 24; font.bold: true
+        opacity: y/page.height
     }
 }
