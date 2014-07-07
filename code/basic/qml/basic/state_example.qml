@@ -32,18 +32,29 @@ Rectangle {
         width: 10
         height: 10
         color: "red"
-        x: 50
-        y: 50
+
+        anchors.top: parent.top
+        anchors.left: parent.left
+
+        anchors.leftMargin: 50
+        anchors.bottomMargin: 50
+        anchors.topMargin: 50
+        anchors.rightMargin: 50
 
         // first we add the states
+        // what if we want to change the anchors
         states: [
             State {
                 name: "upRight"
                 PropertyChanges {
                     target: item
                     color: "blue"
-                    rotation: 160
-                    x : 300
+                    rotation: 180
+                }
+                AnchorChanges {
+                    target: item
+                    anchors.top: parent.top
+                    anchors.right: parent.right
                 }
             }
         ]
