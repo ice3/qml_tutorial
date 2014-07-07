@@ -34,12 +34,20 @@ Rectangle {
                     target: item
                     color: "blue"
                     rotation: 160
+                    x : 300
                 }
             }
         ]
 
         // a small transition can be interesting to add
-
+        transitions: [
+            Transition {
+                from: ""
+                to: "upRight"
+                NumberAnimation { target: item; property: "x"; duration: 1000; easing.type: Easing.InOutQuad }
+                NumberAnimation { target: item; property: "rotation"; duration: 1000; easing.type: Easing.InOutQuad}
+            }
+        ]
 
     }
 }
