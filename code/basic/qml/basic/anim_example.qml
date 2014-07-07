@@ -15,6 +15,10 @@ Rectangle {
         PropertyAnimation { to: 0; duration: 1000 }
     }
 
+    // slots are automagically created for all properties
+    // we can detect when they have changed
+    onAnimatedValueChanged: console.log(animatedValue)
+
     Text {
         anchors.centerIn: parent
         text: animatedValue
