@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QtQuick2ApplicationViewer viewer;
-    viewer.setMainQmlFile(QStringLiteral("qml/reusable_elements/button.qml"));
+    viewer.setMainQmlFile(QStringLiteral("qml/reusable_elements/main.qml"));
     viewer.showExpanded();
 
     return app.exec();
