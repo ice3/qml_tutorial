@@ -5,6 +5,7 @@ Rectangle {
     width: 500
     height: 500
 
+    // we want to change the state of the item when we click on the button
     Rectangle{
         id:button
         anchors.centerIn: parent
