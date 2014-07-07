@@ -5,6 +5,15 @@ Rectangle {
     width: 500
     height: 500
 
+    function chooseState(state){
+        console.log(item.state)
+        if (state == "")
+            return "upRight"
+        if(state == "upRight"){
+            return ""
+        }
+    }
+
     // we want to change the state of the item when we click on the button
     Rectangle{
         id:button
@@ -14,7 +23,7 @@ Rectangle {
         color: "black"
         MouseArea {
             anchors.fill: parent
-            onClicked: item.state = "upRight"
+            onClicked: item.state = chooseState(item.state)
         }
     }
 
@@ -46,6 +55,7 @@ Rectangle {
                 to: "upRight"
                 NumberAnimation { target: item; property: "x"; duration: 1000; easing.type: Easing.InOutQuad }
                 NumberAnimation { target: item; property: "rotation"; duration: 1000; easing.type: Easing.InOutQuad}
+                ColorAnimation {duration: 1000 }
             }
         ]
 
