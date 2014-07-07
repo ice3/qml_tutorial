@@ -5,5 +5,6 @@ Rectangle {
     width: 360
     height: 360
 
-    Button { x: 50; y: 50}
+    Button {id: b1 ; anchors.centerIn: parent ; colorBg: "green" ; text : "ohhhh"}
+    Button {anchors.top: b1.bottom ; anchors.left: b1.right}
 }
