@@ -10,7 +10,7 @@ Rectangle {
         if (state == "")
             return "upRight"
         if(state == "upRight"){
-            return ""
+            return "bottomLeft"
         }
     }
 
@@ -57,7 +57,22 @@ Rectangle {
                     anchors.right: parent.right
                     anchors.left: undefined
                 }
+            },
+            State {
+                name: "bottomLeft"
+                PropertyChanges {
+                    target: item
+                    scale: 2
+                }
+                AnchorChanges {
+                    target: item
+                    anchors.top: undefined
+                    anchors.right: undefined
+                    anchors.left: parent.left
+                    anchors.bottom: parent.bottom
+                }
             }
+
         ]
 
         // a small transition can be interesting to add
@@ -69,6 +84,12 @@ Rectangle {
                 NumberAnimation { target: item; property: "rotation"; duration: 1000; easing.type: Easing.InOutQuad}
                 ColorAnimation {duration: 1000 }
                 AnchorAnimation {duration: 1000 } }
+            },
+            Transition {
+                to: "bottomLeft"
+                NumberAnimation {target: item; property: "scale"; duration: 1000}
+                AnchorAnimation {duration: 1000}
+
             }
         ]
 
