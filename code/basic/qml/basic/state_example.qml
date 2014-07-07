@@ -42,7 +42,6 @@ Rectangle {
         anchors.rightMargin: 50
 
         // first we add the states
-        // this is not what we want, we want to move the object, not resize it
 
         states: [
             State {
@@ -66,9 +65,10 @@ Rectangle {
             Transition {
                 from: ""
                 to: "upRight"
-                NumberAnimation { target: item; property: "x"; duration: 1000; easing.type: Easing.InOutQuad }
+                SequentialAnimation {
                 NumberAnimation { target: item; property: "rotation"; duration: 1000; easing.type: Easing.InOutQuad}
                 ColorAnimation {duration: 1000 }
+                AnchorAnimation {duration: 1000 } }
             }
         ]
 
