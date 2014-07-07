@@ -31,6 +31,7 @@ Rectangle {
                 PropertyChanges {
                     target: item
                     color: "blue"
+                    rotation: 90
                 }
             }
         ]
