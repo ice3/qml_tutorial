@@ -8,6 +8,13 @@ Rectangle {
     // custom properties can be defined
     property int animatedValue: 0
 
+    // and even animated
+    SequentialAnimation on animatedValue {
+        loops: Animation.Infinite
+        PropertyAnimation { to: 150; duration: 1000 }
+        PropertyAnimation { to: 0; duration: 1000 }
+    }
+
     Text {
         anchors.centerIn: parent
         text: animatedValue
