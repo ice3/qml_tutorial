@@ -23,6 +23,10 @@ ui_*.h
 Makefile*
 *-build-*
 
+build-basic-Qt_5_2_1_qt5-Debug/
+.gitconfig
+presentation/examples
+
 # QtCreator
 
 *.autosave
