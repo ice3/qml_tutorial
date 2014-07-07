@@ -14,7 +14,7 @@ Rectangle {
         color: "black"
         MouseArea {
             anchors.fill: parent
-            onClicked: console.log("clicked")
+            onClicked: item.state = "upRight"
         }
     }
 
@@ -31,7 +31,7 @@ Rectangle {
                 PropertyChanges {
                     target: item
                     color: "blue"
-                    rotation: 90
+                    rotation: 160
                 }
             }
         ]
