@@ -17,6 +17,11 @@ Rectangle  {
         anchors.horizontalCenter: page.horizontalCenter
         font.pointSize: 24; font.bold: true
 
+        MouseArea {
+            anchors.fill: parent
+            drag.target: helloText
+            drag.axis: Drag.YAxis
+        }
     }
 
     Text {
