@@ -42,7 +42,8 @@ Rectangle {
         anchors.rightMargin: 50
 
         // first we add the states
-        // what if we want to change the anchors
+        // this is not what we want, we want to move the object, not resize it
+
         states: [
             State {
                 name: "upRight"
@@ -55,6 +56,7 @@ Rectangle {
                     target: item
                     anchors.top: parent.top
                     anchors.right: parent.right
+                    anchors.left: undefined
                 }
             }
         ]
