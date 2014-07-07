@@ -23,6 +23,8 @@ Rectangle {
         width: 10
         height: 10
         color: "red"
+        x: 50
+        y: 50
 
         // first we add the states
         states: [
@@ -35,5 +37,9 @@ Rectangle {
                 }
             }
         ]
+
+        // a small transition can be interesting to add
+
+
     }
 }
