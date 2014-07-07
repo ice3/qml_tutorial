@@ -18,4 +18,5 @@ qtcAddDeployment()
 
 OTHER_FILES += \
     qml/basic/anim_example.qml \
-    qml/basic/hello_world_anchors.qml
+    qml/basic/hello_world_anchors.qml \
+    qml/basic/state_example.qml
