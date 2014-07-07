@@ -8,6 +8,8 @@ Rectangle {
     property color colorBg: "red"
     color: colorBg
 
+    anchors.left: parent.left
+
     Text {
         anchors.fill: parent
         id: label
