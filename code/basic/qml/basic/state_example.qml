@@ -89,7 +89,6 @@ Rectangle {
                 to: "bottomLeft"
                 NumberAnimation {target: item; property: "scale"; duration: 1000}
                 AnchorAnimation {duration: 1000}
-
             }
         ]
 
