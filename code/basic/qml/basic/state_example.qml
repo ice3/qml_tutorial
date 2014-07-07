@@ -23,5 +23,16 @@ Rectangle {
         width: 10
         height: 10
         color: "red"
+
+        // first we add the states
+        states: [
+            State {
+                name: "upRight"
+                PropertyChanges {
+                    target: item
+                    color: "blue"
+                }
+            }
+        ]
     }
 }
