@@ -5,8 +5,8 @@ Rectangle {
     width: 25
     height: 25
     property alias text: label.text
-
-    color: "red"
+    property color colorBg: "red"
+    color: colorBg
 
     Text {
         anchors.fill: parent
@@ -15,10 +15,10 @@ Rectangle {
     }
 
     MouseArea {
-        hoverEnabled: true
+        hoverEnabled: true  // this is needed to catch the hover, otherwise, only click is captured
         anchors.fill: parent
         onEntered: parent.color = "blue"
-        onExited: parent.color = "red"
+        onExited: parent.color = colorBg
     }
 
 }
