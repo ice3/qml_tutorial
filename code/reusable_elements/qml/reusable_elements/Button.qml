@@ -2,13 +2,14 @@ import QtQuick 2.0
 
 Rectangle {
     id: button
-    width: 100
-    height: 100
+    width: 25
+    height: 25
     property alias text: label.text
 
     color: "red"
 
     Text {
+        anchors.fill: parent
         id: label
         text: qsTr("OK")
     }
