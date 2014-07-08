@@ -4,5 +4,6 @@ Rectangle {
     width: 600
     height: 600
 
-    MyText{anchors.centerIn: parent}
+    // how can we connect to signals emitted by mytext ?
+    MyText{id: mytext; anchors.centerIn: parent}
 }
