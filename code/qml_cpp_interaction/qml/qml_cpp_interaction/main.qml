@@ -7,6 +7,11 @@ Rectangle {
     signal mouseClicked(double nb)
     onMouseClicked: console.log(nb)
 
+    Connections{
+        target: controller
+        onAnswerBack: console.log(ans)
+    }
+
     Text {
         text: qsTr("Hello World")
         anchors.centerIn: parent

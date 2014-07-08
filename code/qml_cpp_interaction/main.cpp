@@ -1,6 +1,7 @@
 #include <QtGui/QGuiApplication>
 #include "qtquick2applicationviewer.h"
 #include <QObject>
+#include <QString>
 #include <iostream>
 #include <QQmlContext>
 
@@ -14,8 +15,11 @@ class controller : public QObject
     Q_OBJECT
 
 public slots:
-    void cppSlot(double nb){std::cout << "from cpp : " << nb << std::endl;}
+    void cppSlot(double nb){emit answerBack("pong !");
+    }
 
+signals:
+    void answerBack(QString ans);
 };
 
 //needed for inline class definitions...
