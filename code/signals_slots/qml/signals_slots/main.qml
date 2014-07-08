@@ -4,8 +4,10 @@ Rectangle {
     width: 360
     height: 360
 
-    // it is posible to get slots on every property
-    onWidthChanged: console.log(width) // change the window size
+    // we can define our own signals
+    signal start()
+
+    onStart: console.log("started")
 
     Text {
         text: qsTr("Hello World")
@@ -14,7 +16,7 @@ Rectangle {
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            Qt.quit();
+            start();
         }
     }
 }
