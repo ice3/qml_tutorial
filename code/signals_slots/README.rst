@@ -1,0 +1,1 @@
+We will see how we can send signals between QML elements.
