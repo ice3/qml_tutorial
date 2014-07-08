@@ -13,6 +13,7 @@ Rectangle {
     }
 
     Text {
+        objectName: "text"  // this is needed to be found by findChildren
         text: qsTr("Hello World")
         anchors.centerIn: parent
     }
