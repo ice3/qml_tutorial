@@ -6,6 +6,7 @@ Rectangle {
 
     // we can define our own signals
     signal clicked_()
+    signal begin()
 
     // slot automatically created
     // the slots can contain multiples instructions
@@ -24,6 +25,14 @@ Rectangle {
                 scale: 0
             }
         }]
+
+        transitions: [
+            Transition {
+                from: ""
+                to: "scale0"
+                NumberAnimation { target: label; property: "scale"; duration: 200; easing.type: Easing.InOutQuad }
+            }
+        ]
     }
     MouseArea {
         anchors.fill: parent
