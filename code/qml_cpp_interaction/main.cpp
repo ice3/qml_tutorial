@@ -41,6 +41,9 @@ int main(int argc, char *argv[])
     // we find the root object of the QML document
     QObject *root = viewer.rootObject();
 
+    // we can also set some properties in the cpp file
+    root->setProperty("color", "red");
+
     // standart signal slot connection
     QObject::connect(root,
                      SIGNAL(mouseClicked(double)),
