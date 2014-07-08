@@ -11,6 +11,7 @@ Rectangle {
     // slot automatically created
     // the slots can contain multiples instructions
     onClicked_: {label.state = "scale0"; console.log("started")}
+    onBegin: console.log("end anim")
 
     Text {
         id: label
@@ -30,7 +31,11 @@ Rectangle {
             Transition {
                 from: ""
                 to: "scale0"
-                NumberAnimation { target: label; property: "scale"; duration: 200; easing.type: Easing.InOutQuad }
+                NumberAnimation { target: label; property: "scale"; duration: 2000; easing.type: Easing.InOutQuad }
+                onRunningChanged: {
+                    if ((label.state == "scale0") && (!running))
+                        begin()
+                }
             }
         ]
     }
