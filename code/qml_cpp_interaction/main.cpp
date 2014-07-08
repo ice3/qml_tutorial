@@ -2,6 +2,8 @@
 #include "qtquick2applicationviewer.h"
 #include <QObject>
 #include <iostream>
+#include <QQmlContext>
+
 
 #include <QQuickItem>
 #include <QQuickView>
@@ -12,7 +14,7 @@ class controller : public QObject
     Q_OBJECT
 
 public slots:
-    void cppSlot(double nb){std::cout << "from cpp : " << nb;}
+    void cppSlot(double nb){std::cout << "from cpp : " << nb << std::endl;}
 
 };
 
@@ -24,9 +26,25 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
+    // we declare the controller
+    controller *test = new controller;
+
     QtQuick2ApplicationViewer viewer;
+    // !! we need to set the context property to get the signals and slots !
+    viewer.rootContext()->setContextProperty("controller", test);
     viewer.setMainQmlFile(QStringLiteral("qml/qml_cpp_interaction/main.qml"));
+
+    // we find the root object of the QML document
+    QObject *root = viewer.rootObject();
+
+    // standart signal slot connection
+    QObject::connect(root,
+                     SIGNAL(mouseClicked(double)),
+                     test,
+                     SLOT(cppSlot(double)));
+
     viewer.showExpanded();
+
 
     return app.exec();
 }
