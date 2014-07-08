@@ -7,9 +7,11 @@ Rectangle {
     // we can define our own signals
     signal start()
 
+    // slot automatically created
     onStart: console.log("started")
 
     Text {
+        id: text
         text: qsTr("Hello World")
         anchors.centerIn: parent
     }
