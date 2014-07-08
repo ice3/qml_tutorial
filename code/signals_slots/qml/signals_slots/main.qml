@@ -5,29 +5,30 @@ Rectangle {
     height: 360
 
     // we can define our own signals
-    signal start()
+    signal clicked()
 
     // slot automatically created
     // the slots can contain multiples instructions
-    onStart: {console.log("started"); text.state = "scale0"}
+    onStart: {label.state = "scale0"; console.log("started")}
 
     Text {
-        id: text
+        id: label
         text: qsTr("Hello World")
         anchors.centerIn: parent
+        onStateChanged: console.log(state, scale)
 
-        State {
+        states: [State {
             name: "scale0"
             PropertyChanges {
-                target: text
+                target: label
                 scale: 0
             }
-        }
+        }]
     }
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            start();
+            clicked();
         }
     }
 }
