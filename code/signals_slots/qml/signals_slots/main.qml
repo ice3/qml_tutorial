@@ -5,11 +5,11 @@ Rectangle {
     height: 360
 
     // we can define our own signals
-    signal clicked()
+    signal clicked_()
 
     // slot automatically created
     // the slots can contain multiples instructions
-    onStart: {label.state = "scale0"; console.log("started")}
+    onClicked_: {label.state = "scale0"; console.log("started")}
 
     Text {
         id: label
@@ -28,7 +28,7 @@ Rectangle {
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            clicked();
+            clicked_();
         }
     }
 }
