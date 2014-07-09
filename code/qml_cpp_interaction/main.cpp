@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 
     // we find the root object of the QML document
     QObject *root = viewer.rootObject();
-    QObject *text = root->findChild<QObject*>("tet");
+    QObject *text = root->findChild<QObject*>("text");
 
     // we can also set some properties in the cpp file
     root->setProperty("color", "red");
