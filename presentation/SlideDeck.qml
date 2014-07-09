@@ -25,9 +25,10 @@ OpacityTransitionPresentation
 
     Slide {
         title: "QML?"
+        fontSize: 40
         content: [
             "QML is a subset of javascript",
-            "\"Scripting language\" for interfaces",
+            "\"Scripting language\" for \ninterfaces",
             "Describes a document as a \n tree of objects",
             "Declarative",
             "Reactive",
@@ -35,19 +36,20 @@ OpacityTransitionPresentation
 
 
         CodeSection {
-
-            text: "Slide {\n" +
-                  "    id: areaSlide\n" +
-                  "    title: \"Slide {} Element\"\n" +
-                  "    content: [\n" +
-                  "              \"Bullet points\",\n" +
-                  "              \"Should be short\",\n" +
-                  "              \"And to the point\",\n" +
-                  "              \" Sub point\",\n" +
-                  "              \"  Sub Sub point\",\n" +
-                  "              \" Sub point\"\n" +
-                  "             ]\n" +
-                  "}\n"
+            text: "Rectangle {\n" +
+                  "    width: 360\n" +
+                  "    height: 360\n" +
+                  "    Text {\n" +
+                  "          color: \"#d76b6b\"\n" +
+                  "          id: \"hello\"\n" +
+                  "          text: \"Hello World\"\n" +
+                  "          anchors.centerIn: parent\n" +
+                  "    }\n" +
+                  "    MouseArea {\n" +
+                  "          anchors.fill: parent\n" +
+                  "          onClicked: QtApp.quit()\n" +
+                  "    }\n" +
+                  "}"
         }
 
     }
@@ -65,7 +67,7 @@ OpacityTransitionPresentation
     }
 
     Slide {
-        title: "Why you should use QML"
+        title: "Why you should use QML."
         content: [
         "easier to protptype",
         "does not need C++ knowledge",
@@ -119,7 +121,7 @@ OpacityTransitionPresentation
                 color: "#d76b6b"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
-                text: "Disclaimer: \nI've been using QML only for 2.5 weeks..."
+                text: "Disclaimer: \nI've been using QML for 2.5 weeks..."
             }
         }
     }
@@ -143,5 +145,4 @@ OpacityTransitionPresentation
         textColor: "#d76d6b"
         centeredText : "What do you think ? \nWill you use it ? "
     }
-
 }
